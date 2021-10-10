@@ -2,7 +2,7 @@ import React from "react";
 import { HeaderAppBar, HeaderLogo } from "./Header.style";
 import { Toolbar, Container } from "@mui/material";
 
-const Header = () => {
+const Header: React.FC = () => {
     return (
       <HeaderAppBar position={"sticky"}>
         <Toolbar component={Container}>
