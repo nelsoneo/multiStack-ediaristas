@@ -2,8 +2,7 @@ import type { NextPage } from 'next'
 import SafeEnvironment from 'ui/components/feedback/safeEnvironment/SafeEnvironment'
 import PageTitle from 'ui/components/data-display/PageTitle/PageTitle';
 import UserInformation from 'ui/components/data-display/UserInformation/UserInformation';
-import TextField from 'ui/components/inputs/TextField/TextField';
-
+import TextFieldMask from "ui/components/inputs/TextFieldMask/TextFieldMask";
 
 const Home: NextPage = () => {
   return (
@@ -16,7 +15,12 @@ const Home: NextPage = () => {
         }
       />
 
-      <TextField />
+      <TextFieldMask
+        mask={"99.999-999"}
+        label={"Digite seu CEP"}
+        fullWidth
+        variant={'outlined'}
+      />
 
       <UserInformation
         name={"Nelson Hernandez"}
@@ -26,14 +30,12 @@ const Home: NextPage = () => {
       />
       <UserInformation
         name={"Daniel Hernandez Puig"}
-        picture={
-          "img/danielMySon.png"
-        }
+        picture={"img/danielMySon.png"}
         rating={5}
         description={"La Habana"}
       />
     </div>
   );
-}
+};
 
 export default Home
