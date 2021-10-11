@@ -10,19 +10,19 @@ export const FormElementsContainer = styled('div')`
     margin: 0 auto ${({ theme }) => theme.spacing(7)};
 `;
 
-export const ProfessionaisPaper = styled(Paper)`
-padding: ${({ theme }) => theme.spacing(7)};;
-margin: 0 auto ${({ theme }) => theme.spacing(10)};
+export const ProfissionaisPaper = styled(Paper)`
+  padding: ${({ theme }) => theme.spacing(7)};
+  margin: 0 auto ${({ theme }) => theme.spacing(10)};
 
-${({ theme }) => theme.breakpoints.down('md')} {
+  ${({ theme }) => theme.breakpoints.down("md")} {
     &.MuiPaper-root {
-        padding: 0;
-        box-shadow: none;
+      padding: 0;
+      box-shadow: none;
     }
-}
+  }
 `;
 
-export const ProfessionaisContainer = styled(Paper)`
+export const ProfissionaisContainer = styled(Paper)`
   display: grid;
   grid-template-columns: 1fr;
 
@@ -32,10 +32,10 @@ export const ProfessionaisContainer = styled(Paper)`
   }
 
   ${({ theme }) => theme.breakpoints.down("md")} {
-    margin-left: ${({theme}) => theme.spacing(-2)};
+    margin-left: ${({ theme }) => theme.spacing(-2)};
     margin-right: ${({ theme }) => theme.spacing(-2)};
     > ::nth-of-type(odd) {
-        background-color: ${({theme}) => theme.palette.background.paper};
+      background-color: ${({ theme }) => theme.palette.background.paper};
     }
   }
 `;

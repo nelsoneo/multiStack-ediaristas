@@ -1,10 +1,10 @@
-import axios from 'axios';
+import axios from "axios";
 
-const url= 'https://ediaristas-workshop.herohuapp.com'
+const url = "https://ediaristas-workshop.herokuapp.com";
 
 export const ApiService = axios.create({
-    baseURL: url,
-    headers: {
-        'Content-Type': 'application-json'
-    }
+  baseURL: url,
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
