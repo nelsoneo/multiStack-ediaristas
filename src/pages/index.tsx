@@ -3,8 +3,12 @@ import SafeEnvironment from 'ui/components/feedback/safeEnvironment/SafeEnvironm
 import PageTitle from 'ui/components/data-display/PageTitle/PageTitle';
 import UserInformation from 'ui/components/data-display/UserInformation/UserInformation';
 import TextFieldMask from "ui/components/inputs/TextFieldMask/TextFieldMask";
-import { Button, Typography } from "@mui/material";
-import { FormElementsContainer } from 'ui/styles/pages/index.style';
+import { Button, Typography, Container } from "@mui/material";
+import {
+  FormElementsContainer,
+  ProfessionaisPaper,
+  ProfessionaisContainer,
+} from "ui/styles/pages/index.style";
 
 const Home: NextPage = () => {
   return (
@@ -17,31 +21,42 @@ const Home: NextPage = () => {
         }
       />
 
-      <FormElementsContainer>
-        <TextFieldMask
-          mask={"99.999-999"}
-          label={"Digite seu CEP"}
-          fullWidth
-          variant={"outlined"}
-        />
-        <Typography color={'error'}>CEP inválido</Typography>
-        <Button variant={"contained"} color={"secondary"} sx={{ width: "220px" }}>
-          Buscar
-        </Button>
-      </FormElementsContainer>
-      
-      <UserInformation
-        name={"Nelson Hernandez"}
-        picture={"https://github.com/nelsoneo.png"}
-        rating={4}
-        description={"Rio Grande do Sul"}
-      />
-      <UserInformation
-        name={"Daniel Hernandez Puig"}
-        picture={"img/danielMySon.png"}
-        rating={5}
-        description={"La Habana"}
-      />
+      <Container>
+        <FormElementsContainer>
+          <TextFieldMask
+            mask={"99.999-999"}
+            label={"Digite seu CEP"}
+            fullWidth
+            variant={"outlined"}
+          />
+          <Typography color={"error"}>CEP inválido</Typography>
+          <Button
+            variant={"contained"}
+            color={"secondary"}
+            sx={{ width: "220px" }}
+          >
+            Buscar
+          </Button>
+        </FormElementsContainer>
+
+        <ProfessionaisPaper>
+          <ProfessionaisContainer>
+            <UserInformation
+              name={"Nelson Hernandez"}
+              picture={"https://github.com/nelsoneo.png"}
+              rating={4}
+              description={"Rio Grande do Sul"}
+            />
+            <UserInformation
+              name={"Daniel Hernandez Puig"}
+              picture={"img/danielMySon.png"}
+              rating={5}
+              description={"La Habana"}
+            />
+          </ProfessionaisContainer>
+        </ProfessionaisPaper>
+      </Container>
+
     </div>
   );
 };
