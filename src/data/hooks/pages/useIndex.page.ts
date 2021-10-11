@@ -1,15 +1,21 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { UserShorInterface } from "data/@types/UserInterface";
+import { ValidationService } from "data/services/ValidationService";
 
 export default function useIndex() {
     const [cep, setCep] = useState(""),
-      [erro, setErro] = useState(""),
-      [buscaFeita, setBuscaFeita] = useState(false),
-      [carregando, setCarregando] = useState(false),
-      [diarista, setDiarista] = useState([] as UserShorInterface[]);
+        cepValido = useMemo(() => {
+          return ValidationService.cep(cep);
+      }, [cep]),
+    [erro, setErro] = useState(""),
+    [buscaFeita, setBuscaFeita] = useState(false),
+    [carregando, setCarregando] = useState(false),
+    [diarista, setDiarista] = useState([] as UserShorInterface[]),
+    [diaristasRestantes, setDiaristasRestantes] = useState(0);
 
-    return {
-        cep,
-        setCep
-    }
+  return {
+    cep,
+    setCep,
+    cepValido,
+  };
 }

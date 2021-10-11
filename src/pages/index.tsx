@@ -13,7 +13,7 @@ import useIndex from 'data/hooks/pages/useIndex.page';
 
 const Home: NextPage = () => {
 
-  const { cep, setCep } = useIndex();
+  const { cep, setCep, cepValido } = useIndex();
 
   return (
     <div>
@@ -35,7 +35,7 @@ const Home: NextPage = () => {
             value={cep}
             onChange={(event) => setCep(event.target.value)}
           />
-         
+         {cepValido}
           <Typography color={"error"}>CEP inválido</Typography>
           <Button
             variant={"contained"}
