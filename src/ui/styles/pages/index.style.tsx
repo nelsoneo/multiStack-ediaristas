@@ -28,7 +28,7 @@ export const ProfessionaisContainer = styled(Paper)`
 
   ${({ theme }) => theme.breakpoints.up("md")} {
     grid-template-columns: repeat(2, 1fr);
-    gap: ${({ theme }) => theme.spacing(6)};
+    gap: ${({ theme }) => theme.spacing(0)};
   }
 
   ${({ theme }) => theme.breakpoints.down("md")} {
